@@ -48,11 +48,11 @@ specified, then path will be current path \.
 
 The following command build a sbom from the ‘spid-sp-test’ GitHub repository provided the GitHub key and store the sbom in the ‘example’ folder. Dependencies are collected only from the requirements.txt file if present. There will not be indirect dependencies (unless they are specified in the requirements.txt).
 
-python sbompy.py -s 'https://github.com/italia/spid-sp-test' -k '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' -l 'example'
+python sbompy.py -s 'https://github.com/italia/spid-sp-test' -k 'ghp_Tdsafdsafdsvgbfdgfdbredfasdf' -l 'example'
 
 The following command build a sbom from the ‘spid-sp-test’ GitHub repository provided the GitHub key and store the sbom in the current folder. Dependencies are collected both from requirements.txt and from parsing the code (-p flag). Indirect dependencies are collected by installing in a virtual environment the direct dependencies (-d flag).
 
-python sbompy.py -s 'https://github.com/italia/spid-sp-test' -k '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' -d -p
+python sbompy.py -s 'https://github.com/italia/spid-sp-test' -k 'ghp_ThzjnQNGxY3dsfathtrh4543qrf4tegrsadUsKf' -d -p
 
 The following command build a sbom from the local folder ‘project’ and store the sbom in the current folder.Dependencies are collected only from the requirements.txt file if present. There will not be indirect dependencies (unless they are specified in the requirements.txt).
 
