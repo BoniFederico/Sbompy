@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling","docopt==0.6.2","pipreqs==0.4.11","requests==2.28.0"]
+build-backend = "hatchling.build"
+[project]
+name = "sbompy"
+version = "0.0.1"
+authors = [
+  { name="Federico Boni", email="federicoboni67@example.com" },
+]
+description = "Sbompy is a Python tool for building sbom files from Python project."
+readme = "README.md"
+license = { file="LICENSE.txt" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/BoniFederico/Sbompy"
+"Bug Tracker" = "https://github.com/BoniFederico/Sbompy/issues"
