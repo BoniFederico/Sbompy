@@ -1,5 +1,5 @@
 # `Sbompy` - Create Sbom with Python
- 
+
 ## Description
 
 Sbompy is a Python tool that allow you to generate a json Software Bill of Materials (SBOM) in accord to the [CycloneDX v1.4 SBOM standard](https://cyclonedx.org/docs/1.4/json/).
@@ -9,7 +9,7 @@ You can generate the SBOM both from a local folder or from a GitHub repository. 
 
 You can install [Sbompy from pip](https://test.pypi.org/project/sbompy/); currently Sbompy is available only in <i>test.pypi</i> index, so you have to run the following command:
 
-```posh 
+```posh
 pip install --index-url 'https://test.pypi.org/simple/' --extra-index-url 'https://pypi.org/simple' sbompy
 ```
 
@@ -17,15 +17,13 @@ pip install --index-url 'https://test.pypi.org/simple/' --extra-index-url 'https
 
 If you install Sbompy from pip (as per the section above) all the requirements will be automatically installed in your system. Otherwise, if you want to download the repository from GitHub, in order to use Sbompy you will need to install all the dependencies defined int <i>requirements.txt</i>. You can either installing them manually using a packet manager (e.g. pip) or you can install them with the following pip command on the <i>requirements.txt</i> file of the project:
 
-```posh 
+```posh
 pip install -r 'requirements.txt'
 ```
 
-
-
-
 ## Usage
-```posh 
+
+```posh
 usage: sbompy.py [-h] [-s [S]] [-p] [-k K] [-d] [-m] [-l [L]] [-v [V]]
 
 Sbompy is a tool for creating sbom in json format from a Python project.
@@ -52,17 +50,23 @@ options:
   -v [V], -verbose [V]  -Logging level. Can be 0 (NotSet), 1 (Debug), 2 (Info), 3
                         (Warning), 4 (Error), 5 (Critical).
 ```
+
 ## Examples
 
 The following command build a sbom from the ‘spid-sp-test’ GitHub repository provided the GitHub key and store the sbom in the ‘example’ folder. Dependencies are collected only from the requirements.txt file if present. There will not be indirect dependencies (unless they are specified in the requirements.txt).
-```posh 
+
+```posh
 python sbompy.sbompy -s 'https://github.com/italia/spid-sp-test' -k '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' -l 'example'
 ```
+
 The following command build a sbom from the ‘spid-sp-test’ GitHub repository provided the GitHub key and store the sbom in the current folder. Dependencies are collected both from requirements.txt and from parsing the code (-p flag). Indirect dependencies are collected by installing in a virtual environment the direct dependencies (-d flag).
-```posh 
+
+```posh
 python sbompy.sbompy -s 'https://github.com/italia/spid-sp-test' -k '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' -d -p
 ```
+
 The following command build a sbom from the local folder ‘project’ and store the sbom in the current folder.Dependencies are collected only from the requirements.txt file if present. There will not be indirect dependencies (unless they are specified in the requirements.txt).
-```posh 
+
+```posh
 python sbompy.sbompy -s 'C:\Users\12345\Desktop\project
 ```
