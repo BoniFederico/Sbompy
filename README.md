@@ -2,7 +2,7 @@
 
 ## Description
 
-Sbompy is a Python tool that allow you to generate a json Software Bill of Materials (SBOM) in accord to the [CycloneDX v1.4 SBOM standard](https://cyclonedx.org/docs/1.4/json/).
+Sbompy is a Python tool that allow you to generate a <b>json Software Bill of Materials (SBOM)</b> in accord to the [CycloneDX v1.4 SBOM standard](https://cyclonedx.org/docs/1.4/json/).
 You can generate the SBOM both from a local folder or from a GitHub repository. Dependencies are collected from <i>requirements.txt</i> file inside the folder, but the tool is also capable of collecting other dependencies by parsing each file `.py` in the folder. Sbompy can also collect indirect dependencies (dependencies of dependencies) by installing all the dependencies in a <i>Python virtual environment</i> inside the target folder.
 
 ## Installation
@@ -22,7 +22,6 @@ pip install -r 'requirements.txt'
 ```
 
 ## Usage
-
 ```posh
 usage: sbompy.py [-h] [-s [S]] [-p] [-k K] [-d] [-m] [-l [L]] [-v [V]]
 
@@ -50,7 +49,11 @@ options:
   -v [V], -verbose [V]  -Logging level. Can be 0 (NotSet), 1 (Debug), 2 (Info), 3
                         (Warning), 4 (Error), 5 (Critical).
 ```
+### Input
+All the possibile input values are explained in the above <i>help snapshot</i>. You will need to choose if building a Sbom from a local folder or from a GitHub repository using the `-s` or `-source` attribute.
 
+### Output
+The output of the tool is a [CycloneDX v1.4 SBOM](https://cyclonedx.org/docs/1.4/json/) in <b>json format</b>. It will be saved in the target directory (the one specified with `-s` or `-source` attribute) or in the directory specified with the `-l` or `-location` attribute.
 ## Examples
 
 The following command build a sbom from the ‘spid-sp-test’ GitHub repository provided the GitHub key and store the sbom in the ‘example’ folder. Dependencies are collected only from the requirements.txt file if present. There will not be indirect dependencies (unless they are specified in the requirements.txt).
